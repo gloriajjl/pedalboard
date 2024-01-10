@@ -1106,7 +1106,7 @@ public:
             "number of channels passed in.)");
       }
 
-      std::vector<float *> channelPointers(
+		std::vector<float *> channelPointers(std::max(pluginInstance->getTotalNumInputChannels(), pluginInstance->getTotalNumOutputChannels()));//
           pluginInstance->getTotalNumOutputChannels());
 
       for (size_t i = 0; i < outputBlock.getNumChannels(); i++) {
